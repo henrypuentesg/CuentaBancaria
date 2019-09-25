@@ -9,6 +9,11 @@ import controlador.CntasJpaController;
 import entity.Cntas;
 import java.math.BigInteger;
 import java.sql.Date;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -70,5 +75,49 @@ public class CntasDAO {
         }
         return mensaje;
     }
+    
+    
+    public void listarCuentas(JTable tabla){
+        DefaultTableModel model;
+        
+        String [] titulo = {"Numero Cuenta","Fecha Creacion","Banco","Cedula","Moneda","Saldo"};
+        model = new DefaultTableModel(null,titulo);
+        
+        List <Cntas> datos = cntasJpaController.findCntasEntities();
+        
+        String [] datosCuenta = new String[6];
+        for (Cntas cntas:datos ){
+        
+            datosCuenta[0] = cntas.getIdCnta()+"";
+            datosCuenta[1] = cntas.getFchaCrcion()+"";
+            datosCuenta[2] = cntas.getIdBnco()+"";
+            datosCuenta[3] = cntas.getNmroIdntfcion()+"";
+            datosCuenta[4] = cntas.getIdMnda()+"";
+            datosCuenta[5] = cntas.getSldo()+"";
+            
+            model.addRow(datosCuenta);
+        }
+        
+        tabla.setModel(model);
+        
+        
+        
+    }
+    
+    
+        public Cntas buscarCuentasId(int idCnta){
+        Cntas cntas;
+        EntityManager entityManager = cntasJpaController.getEntityManager();
+        
+        Query query = entityManager.createQuery("SELECT c FROM Cntas c WHERE c.idCnta = :idCnta");
+        query.setParameter("idCnta", idCnta);
+        
+        cntas=(Cntas) query.getSingleResult();
+        return cntas;
+        
+    }
+    
+    
+    
 
 }

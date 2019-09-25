@@ -38,12 +38,13 @@ public class FrmInicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setMinimumSize(null);
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Menu Inicio Cajero");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 100, -1, -1));
 
         BtnMovimientosCuenta.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         BtnMovimientosCuenta.setText("Movimientos Con La Cuenta");
@@ -52,7 +53,7 @@ public class FrmInicio extends javax.swing.JFrame {
                 BtnMovimientosCuentaActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnMovimientosCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 270, 50));
+        jPanel2.add(BtnMovimientosCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 280, 270, 50));
 
         BtnCrearCuenta.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         BtnCrearCuenta.setText("Crear Cuenta");
@@ -61,17 +62,17 @@ public class FrmInicio extends javax.swing.JFrame {
                 BtnCrearCuentaActionPerformed(evt);
             }
         });
-        jPanel2.add(BtnCrearCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 170, 140, 40));
+        jPanel2.add(BtnCrearCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 140, 40));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 435, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 520, Short.MAX_VALUE)
         );
 
         pack();

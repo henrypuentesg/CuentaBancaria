@@ -88,4 +88,6 @@ public class MvmtosCntas implements Serializable {
         this.vlor = vlor;
     }
     
+
+
 }

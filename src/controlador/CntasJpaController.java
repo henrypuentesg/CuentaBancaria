@@ -55,16 +55,14 @@ public class CntasJpaController implements Serializable {
         try {
             em = getEntityManager();
             em.getTransaction().begin();
-            cntas = em.merge(cntas);
-            em.getTransaction().commit();
-        } catch (Exception ex) {
-            String msg = ex.getLocalizedMessage();
-            if (msg == null || msg.length() == 0) {
-                int id = cntas.getIdCnta();
-                if (findCntas(id) == null) {
-                    throw new NonexistentEntityException("The cntas with id " + id + " no longer exists.");
-                }
+            int id = cntas.getIdCnta();
+            if (findCntas(id) == null) {
+                throw new NonexistentEntityException("The cntas with id " + id + " no longer exists.");
+            } else {
+                cntas = em.merge(cntas);
+                em.getTransaction().commit();
             }
+        } catch (Exception ex) {
             throw ex;
         } finally {
             if (em != null) {

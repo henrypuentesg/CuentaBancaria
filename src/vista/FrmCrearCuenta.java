@@ -39,6 +39,7 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
         String text = df.format(fechaactual);
 
         this.txtFchaCrcion.setText(text);
+        mostrarTabla();
 
     }
 
@@ -65,10 +66,17 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         txtMoneda = new javax.swing.JTextField();
         BtnVolverCrearPersona = new javax.swing.JButton();
-        btnGuardarCrearCuenta = new javax.swing.JButton();
+        btnEliminarrGrillaCuentaBancaria = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tbCuentas = new javax.swing.JTable();
+        btnGuardarCrearCuenta = new javax.swing.JButton();
+        btnLimpiarGrillaCuentaBancaria1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(null);
+        setMinimumSize(null);
+        setPreferredSize(null);
         setSize(new java.awt.Dimension(431, 435));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -76,43 +84,43 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtsldo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel1.add(txtsldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, 120, -1));
+        jPanel1.add(txtsldo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 290, 180, -1));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel2.setText("Saldo");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel3.setText("Numero Cuenta");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, -1, -1));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel4.setText("Fecha Creacion");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 140, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 130, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel5.setText("Banco");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, -1, -1));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Cedula");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 220, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, -1, -1));
 
         txtIdCnta.setEditable(false);
         txtIdCnta.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel1.add(txtIdCnta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 100, 120, -1));
+        jPanel1.add(txtIdCnta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 90, 180, -1));
 
         txtFchaCrcion.setEditable(false);
-        txtFchaCrcion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        txtFchaCrcion.setFont(new java.awt.Font("Tahoma", 0, 8)); // NOI18N
         txtFchaCrcion.addContainerListener(new java.awt.event.ContainerAdapter() {
             public void componentAdded(java.awt.event.ContainerEvent evt) {
                 txtFchaCrcionComponentAdded(evt);
             }
         });
-        jPanel1.add(txtFchaCrcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, 120, -1));
+        jPanel1.add(txtFchaCrcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 180, 30));
 
         txtDescBnco.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel1.add(txtDescBnco, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 180, 120, -1));
+        jPanel1.add(txtDescBnco, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 180, -1));
 
         txtNmroIdntfccion.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         txtNmroIdntfccion.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -120,14 +128,14 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
                 txtNmroIdntfccionKeyTyped(evt);
             }
         });
-        jPanel1.add(txtNmroIdntfccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 120, -1));
+        jPanel1.add(txtNmroIdntfccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 210, 180, -1));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel7.setText("Moneda");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, -1, -1));
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
 
         txtMoneda.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jPanel1.add(txtMoneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 260, 120, -1));
+        jPanel1.add(txtMoneda, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 250, 180, -1));
 
         BtnVolverCrearPersona.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         BtnVolverCrearPersona.setText("Volver");
@@ -136,7 +144,40 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
                 BtnVolverCrearPersonaActionPerformed(evt);
             }
         });
-        jPanel1.add(BtnVolverCrearPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 350, -1, -1));
+        jPanel1.add(BtnVolverCrearPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 450, -1, -1));
+
+        btnEliminarrGrillaCuentaBancaria.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnEliminarrGrillaCuentaBancaria.setText("Eliminar");
+        btnEliminarrGrillaCuentaBancaria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnEliminarrGrillaCuentaBancariaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnEliminarrGrillaCuentaBancaria, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 450, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setText("Creacion De Cuenta Bancaria");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 350, 30));
+
+        tbCuentas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {},
+                {},
+                {},
+                {}
+            },
+            new String [] {
+
+            }
+        ));
+        tbCuentas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbCuentasMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tbCuentas);
+
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 540, 90));
 
         btnGuardarCrearCuenta.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnGuardarCrearCuenta.setText("Guardar");
@@ -145,13 +186,18 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
                 btnGuardarCrearCuentaActionPerformed(evt);
             }
         });
-        jPanel1.add(btnGuardarCrearCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 350, -1, -1));
+        jPanel1.add(btnGuardarCrearCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 450, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setText("Creacion De Cuenta Bancaria");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 30, 280, 30));
+        btnLimpiarGrillaCuentaBancaria1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnLimpiarGrillaCuentaBancaria1.setText("Limpiar");
+        btnLimpiarGrillaCuentaBancaria1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarGrillaCuentaBancaria1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btnLimpiarGrillaCuentaBancaria1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 450, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 431, 435));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -164,29 +210,22 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
 
     }//GEN-LAST:event_BtnVolverCrearPersonaActionPerformed
 
-    private void btnGuardarCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCrearCuentaActionPerformed
+    private void btnEliminarrGrillaCuentaBancariaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarrGrillaCuentaBancariaActionPerformed
 
         if (txtDescBnco.getText().equals("") || txtMoneda.getText().equals("")
                 || txtNmroIdntfccion.getText().equals("") || txtsldo.getText().equals("")) {
-            JOptionPane.showMessageDialog(null, "Todo Los campos Son obligatorios");
+            JOptionPane.showMessageDialog(null, "Seleccione el registro que Quiere eliminar de la Grilla ");
         } else {
-        //de formato de fecha  
-            //System.out.println(objSDF.format(objDate)); 
-            String mensaje = null;
-            String idBnco = txtDescBnco.getText();
-            String NmroIdntfccion = txtNmroIdntfccion.getText();
-            String mnda = txtMoneda.getText();
-            double sldo = Double.parseDouble(txtsldo.getText());
 
-       // Date date = new Date();
-            // DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-            // System.out.println("Fecha: "+dateFormat.format(date));
-            mensaje = cntasDAO.insertarCuentas(java.sql.Date.valueOf(LocalDate.now()), idBnco, NmroIdntfccion, mnda, sldo);
+            int idCnta = Integer.parseInt(txtIdCnta.getText());
+            String mensaje = null;
+
+            mensaje = cntasDAO.eliminarCuentas(idCnta);
             JOptionPane.showMessageDialog(null, mensaje);
 
         }
-
-    }//GEN-LAST:event_btnGuardarCrearCuentaActionPerformed
+        mostrarTabla();
+    }//GEN-LAST:event_btnEliminarrGrillaCuentaBancariaActionPerformed
 
     private void txtNmroIdntfccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNmroIdntfccionKeyTyped
         char validaCedula = evt.getKeyChar();
@@ -200,6 +239,66 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
     private void txtFchaCrcionComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_txtFchaCrcionComponentAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFchaCrcionComponentAdded
+
+    private void tbCuentasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tbCuentasMouseClicked
+
+        int select = tbCuentas.getSelectedRow();
+
+        txtIdCnta.setText(tbCuentas.getValueAt(select, 0) + "");
+        txtFchaCrcion.setText(tbCuentas.getValueAt(select, 1) + "");
+        txtDescBnco.setText(tbCuentas.getValueAt(select, 2) + "");
+        txtNmroIdntfccion.setText(tbCuentas.getValueAt(select, 3) + "");
+        txtMoneda.setText(tbCuentas.getValueAt(select, 4) + "");
+        txtsldo.setText(tbCuentas.getValueAt(select, 5) + "");
+
+
+    }//GEN-LAST:event_tbCuentasMouseClicked
+
+    private void btnGuardarCrearCuentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarCrearCuentaActionPerformed
+        // TODO add your handling code here:
+
+        if (txtDescBnco.getText().equals("") || txtMoneda.getText().equals("")
+                || txtNmroIdntfccion.getText().equals("") || txtsldo.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Todo Los campos Son obligatorios");
+        } else {
+            //de formato de fecha  
+            //System.out.println(objSDF.format(objDate)); 
+            String mensaje = null;
+            String idBnco = txtDescBnco.getText();
+            String NmroIdntfccion = txtNmroIdntfccion.getText();
+            String mnda = txtMoneda.getText();
+            double sldo = Double.parseDouble(txtsldo.getText());
+
+            // Date date = new Date();
+            // DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            // System.out.println("Fecha: "+dateFormat.format(date));
+            mensaje = cntasDAO.insertarCuentas(java.sql.Date.valueOf(LocalDate.now()), idBnco, NmroIdntfccion, mnda, sldo);
+            JOptionPane.showMessageDialog(null, mensaje);
+
+        }
+
+        mostrarTabla();
+
+    }//GEN-LAST:event_btnGuardarCrearCuentaActionPerformed
+
+    private void btnLimpiarGrillaCuentaBancaria1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarGrillaCuentaBancaria1ActionPerformed
+    limpiarGrilla();
+    mostrarTabla();
+        
+    }//GEN-LAST:event_btnLimpiarGrillaCuentaBancaria1ActionPerformed
+
+    private void mostrarTabla() {
+        cntasDAO.listarCuentas(tbCuentas);
+    }
+
+    private void limpiarGrilla() {
+        txtIdCnta.setText("");
+        txtDescBnco.setText("");
+        txtNmroIdntfccion.setText("");
+        txtMoneda.setText("");
+        txtsldo.setText("");
+
+    }
 
     /**
      * @param args the command line arguments
@@ -238,7 +337,9 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnVolverCrearPersona;
+    private javax.swing.JButton btnEliminarrGrillaCuentaBancaria;
     private javax.swing.JButton btnGuardarCrearCuenta;
+    private javax.swing.JButton btnLimpiarGrillaCuentaBancaria1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -247,6 +348,8 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tbCuentas;
     private javax.swing.JTextField txtDescBnco;
     private javax.swing.JTextField txtFchaCrcion;
     private javax.swing.JTextField txtIdCnta;
@@ -254,4 +357,5 @@ public class FrmCrearCuenta extends javax.swing.JFrame {
     private javax.swing.JTextField txtNmroIdntfccion;
     private javax.swing.JTextField txtsldo;
     // End of variables declaration//GEN-END:variables
+
 }

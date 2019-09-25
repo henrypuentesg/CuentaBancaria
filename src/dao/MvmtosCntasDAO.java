@@ -10,6 +10,8 @@ import controlador.MvmtosCntasJpaController;
 import entity.Mndas;
 import entity.MvmtosCntas;
 import java.sql.Date;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 /**
  *
@@ -66,4 +68,8 @@ public class MvmtosCntasDAO {
         }
         return mensaje;
     }
+    
+    
+
+    
 }
